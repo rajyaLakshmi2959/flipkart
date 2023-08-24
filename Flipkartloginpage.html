@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       * { 
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #ddd;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    font-family: "Roboto",sans-serif;
+}
+.container{
+    background-color: white;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    max-width: 40rem;
+    width: 100%;
+}
+.left{
+    background-color: blue;
+    padding: 3rem 1rem 3rem 2rem;
+    background-image: url(images/bgimg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+
+}
+.right{
+    padding: 3rem 2rem 1.6rem;
+}
+.heading{
+    color: white;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+.heading_des{
+     color: #dbdbdb;
+     font-size: 1.2rem;
+}
+.input-group{
+    position: relative;
+    margin-bottom: 1.5rem;
+    
+}
+.input{
+    padding: 0.5rem;
+    border: none;
+    width: 100%;
+    border-bottom: 1px solid #878787;
+    outline: none;
+    font-size: 1.1rem;
+}
+.label{
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #878787;
+    pointer-events: none;
+    transform-origin: left;
+    transition: transform .0.2s ease;
+    .input:placeholder{
+     visibility: hidden;
+    }
+}
+.input:focus ~ label .input:not(placeholder-shown)-label{
+     transform: translateY(-140%) scale(0.8);
+}
+.line{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: blue;
+    transform: scaleX(0);
+    transition: transform 0.4s ease-in-out;
+}
+.input:focus ~ .line,input:not(:placeholder-shown) ~ .line{
+    transform: scaleX(1);
+}
+a{
+    text-decoration: none;
+    color: blue;
+}
+.input-group .link{
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.input-group .link:hover{
+    text-decoration: underline;
+}
+.para{
+    font-size: 0.7rem;
+    margin-top: 2rem;
+    color: #878787;
+}
+.btn{
+    width: 100%;
+    margin-top: 1rem;
+    border: none;
+    background-color: #fb641b;
+    padding: 1rem;
+    border-radius: 2px;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.4);
+    color: white;
+    font-size: 1.025rem;
+}
+.para--or{
+    text-align: center;
+    font-size: 1rem;
+    margin: 0.8rem 0;
+}
+.btn--white{
+    color: blue;
+    background-color: white;
+    
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+    margin-top: 0;
+}
+.bottom{
+    text-align: center;
+}
+.link--bottom{
+    display: inline-block;
+    margin-top: 5rem;
+    
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+       <div class="left">
+        <h1 class="heading">Login</h1>
+        <p class="heading_des">Get access to your Orders.Wishlist and Recomendations</p>
+       </div>
+       
+      <div class="right">
+        <div class="input-group">
+            <input class="input" type="text" placeholder=" "/>
+            <label class="label">Enter Email/Phone Number</label>
+            <div class="line"></div>
+        </div>
+        <div class="input-group">
+            <input class="input" type="password" placeholder=" "/>
+            <label class="label">Enter password</label>
+            <div class="line"></div>
+            <a href="" class="link">Forget</a>
+        </div>
+        <p class="para">By continuing, you agree to Flipkart's<a href=""></a> Terms of Use and <a href=""></a>Privacy Policy
+         </p>
+         <button class="btn">Login</button>
+         <p class="para para--or">OR</p>
+         <button class="btn btn--white">Request OTP</button>
+         <div class="bottom">
+         <a href="" class="link link--bottom">New to Flipkart? Create an account</a>
+         </div>
+      </div>
+       </div>
+    </div>
+</body>
+</html>
